@@ -83,15 +83,15 @@ This project utilizes Docker Compose to run both the Streamlit frontend and the 
 Open a terminal and navigate to the root directory of the project where the `docker-compose.yml` file is located.
 2. **Build and Start the Containers**:
 Run the following command to build the Docker images for both the frontend and backend services and start the containers:
-    
+
     ```bash
     bashCopy code
     docker-compose up --build
-    
+
     ```
-    
+
     This command will:
-    
+
     - Build the Docker images for the `streamlit` and `fastapi` services using their respective Dockerfiles.
     - Start the containers and run the applications.
 3. **Access the Applications**:

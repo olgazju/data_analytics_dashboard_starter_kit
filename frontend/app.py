@@ -10,7 +10,7 @@ st.write("Hello! This is a basic Streamlit application displaying a sentence.")
 st.write("Testing connection to FastAPI...")
 
 try:
-    response = requests.get(f"{BACKEND_URL}/test")
+    response = requests.get(f"{BACKEND_URL}/test", timeout=60)
     if response.status_code == 200:
         st.success(response.json().get("message"))
     else:
