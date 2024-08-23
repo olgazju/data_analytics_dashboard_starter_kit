@@ -3,7 +3,6 @@ networks:
   infra_network:
     driver: bridge
 
-
 services:
   streamlit:
     build:
