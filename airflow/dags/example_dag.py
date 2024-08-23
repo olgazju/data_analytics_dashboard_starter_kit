@@ -8,7 +8,7 @@ def print_hello():
 
 
 default_args = {
-    'start_date': datetime(2024, 1, 1),
+    'start_date': datetime(2024, 9, 24),
 }
 
 
