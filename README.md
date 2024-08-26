@@ -102,3 +102,20 @@ Run the following command to build the Docker images for both the frontend and b
 ## Airflow
 
 http://0.0.0.0:8080/
+
+
+## Astro Airflow
+
+
+https://www.astronomer.io/docs/astro/first-dag-cli
+
+```bash
+brew install astro
+astro dev init - for the first time
+```
+
+```bash
+astro login astronomer.io
+cd astronomer
+astro deploy
+```
