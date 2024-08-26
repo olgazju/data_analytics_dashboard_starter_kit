@@ -1,53 +1,70 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objs as go
+import psycopg2
+from datetime import datetime, timedelta
 
+# Set up page configuration
 st.set_page_config(
     page_title="Crypto Dashboard",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
-# Example OHLC data with both red and green sticks
-ohlc_data = {
-    'timestamp': [
-        1693180800000, 1693267200000, 1693353600000, 1693440000000, 1693526400000,
-        1693612800000, 1693699200000, 1693785600000, 1693872000000, 1693958400000,
-        1694044800000, 1694131200000, 1694217600000, 1694304000000, 1694390400000,
-        1694476800000, 1694563200000, 1694649600000, 1694736000000, 1694822400000
-    ],
-    'open': [
-        210, 215, 220, 225, 230,
-        235, 230, 240, 245, 250,
-        255, 250, 260, 265, 270,
-        275, 270, 275, 280, 285
-    ],
-    'high': [
-        215, 220, 225, 230, 235,
-        240, 235, 245, 250, 255,
-        260, 255, 265, 270, 275,
-        280, 275, 280, 285, 290
-    ],
-    'low': [
-        205, 210, 215, 220, 225,
-        230, 225, 235, 240, 245,
-        250, 245, 255, 260, 265,
-        270, 265, 270, 275, 280
-    ],
-    'close': [
-        212, 217, 218, 223, 228,
-        234, 228, 242, 243, 248,
-        254, 248, 258, 263, 268,
-        273, 268, 274, 278, 282
-    ]
-}
 
-# Convert data to a DataFrame
-ohlc_df = pd.DataFrame(ohlc_data)
-ohlc_df['date'] = pd.to_datetime(ohlc_df['timestamp'], unit='ms')
+# Function to get available cryptocurrencies
+def get_available_cryptocurrencies():
+    conn = psycopg2.connect(
+        host=st.secrets["neon"]["url"],
+        database=st.secrets["neon"]["database"],
+        user=st.secrets["neon"]["user"],
+        password=st.secrets["neon"]["password"],
+        port=5432,
+        sslmode='require'
+    )
+    query = "SELECT DISTINCT coin_id FROM ohlc_data"
+    df = pd.read_sql(query, conn)
+    conn.close()
+    return df['coin_id'].tolist()
 
 
-# Imitated metrics data
+# Function to load OHLC data for a given cryptocurrency
+def load_ohlc_data(coin_id):
+    conn = psycopg2.connect(
+        host=st.secrets["neon"]["url"],
+        database=st.secrets["neon"]["database"],
+        user=st.secrets["neon"]["user"],
+        password=st.secrets["neon"]["password"],
+        port=5432,
+        sslmode='require'
+    )
+    half_year_ago = datetime.now() - timedelta(days=30)
+    query = f"""
+        SELECT timestamp, open, high, low, close
+        FROM ohlc_data
+        WHERE coin_id = '{coin_id}' AND date >= '{half_year_ago.strftime('%Y-%m-%d')}'
+        ORDER BY date
+    """
+    df = pd.read_sql(query, conn)
+    conn.close()
+    df['date'] = pd.to_datetime(df['timestamp'], unit='ms')
+    return df
+
+
+# Sidebar for navigation and filters
+st.sidebar.title("Crypto Dashboard")
+st.sidebar.subheader("Filters")
+
+# Get available cryptocurrencies from the database
+cryptocurrencies = get_available_cryptocurrencies()
+
+# Sidebar select box to choose cryptocurrency
+coin = st.sidebar.selectbox("Select Cryptocurrency", cryptocurrencies)
+
+# Load OHLC data from the database for the selected cryptocurrency
+ohlc_df = load_ohlc_data(coin)
+
+# Metrics data (simulated for now, can be replaced with real metrics data)
 metrics = {
     "Liquidity (24h Volume)": "$5.54M",
     "Market Cap": "$207.93M",
@@ -58,11 +75,6 @@ metrics = {
     "Volatility (24h Price Change)": "0.0394",
     "Price Change (7d)": "0.2394"
 }
-
-# Sidebar for navigation and filters
-st.sidebar.title("Crypto Dashboard")
-st.sidebar.subheader("Filters")
-coin = st.sidebar.selectbox("Select Cryptocurrency", ["Bitcoin", "Ethereum", "Solana"])
 
 # Inject custom CSS for styling
 st.markdown(
@@ -111,7 +123,7 @@ fig = go.Figure(data=[go.Candlestick(x=ohlc_df['date'],
                                      decreasing_line_color='red')])
 
 fig.update_layout(
-    title="OHLC Candlestick Chart",
+    title=f"OHLC Candlestick Chart for {coin.capitalize()}",
     xaxis_title="Date",
     yaxis_title="Price (USD)",
     xaxis_rangeslider_visible=False,

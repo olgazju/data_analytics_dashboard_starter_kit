@@ -74,7 +74,7 @@ def ohlc_combined_load():
     coins = ['bitcoin', 'ethereum', 'binancecoin', 'cardano', 'litecoin', 'tether' 'solana', 'beam']
     logger.info(f"Started for {coins}")
     # days = "{{ params.days }}"
-    days = 365
+    days = 30
     logger.info(f"For days {days}")
     api_key = os.getenv("COIN_TOKEN")
 
