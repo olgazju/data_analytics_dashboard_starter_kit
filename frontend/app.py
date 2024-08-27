@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objs as go
-from sqlalchemy import create_engine, text
 
 st.set_page_config(
     page_title="Crypto Dashboard",
@@ -9,24 +8,21 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-
-# Connect to PostgreSQL using SQLAlchemy engine
-db_url = st.secrets["neon"]["db_url"]
-engine = create_engine(db_url)
+# Initialize connection to PostgreSQL
+conn = st.connection("postgresql", type="sql")
 
 
 @st.cache_data(show_spinner=False)
 def get_ohlc_data(coin):
     query = f"SELECT * FROM ohlc_data WHERE coin_id = '{coin}'"
-    return pd.read_sql(query, con=engine)
+    return conn.query(query)
 
 
 @st.cache_data(show_spinner=False)
 def get_coins():
-    coin_query = text("SELECT DISTINCT coin_id FROM ohlc_data")
-    with engine.connect() as connection:
-        result = connection.execute(coin_query)
-        return [row[0] for row in result]
+    coin_query = "SELECT DISTINCT coin_id FROM ohlc_data"
+    result = conn.query(coin_query)
+    return result['coin_id'].tolist()
 
 
 # Load available coins and allow the user to select one
