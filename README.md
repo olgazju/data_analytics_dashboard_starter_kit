@@ -255,6 +255,22 @@ This connection link will be used in different parts of this kit to connect your
 
 </details>
 
+<details>
+  <summary>Click here to see how to deploy dags image</summary>
+    
+  #### How to Deploy Dags Image:
+  
+  1. Navigate to the `astronomer` folder in your project directory.
+  2. Use the command `astro login` to authenticate your Astronomer account.
+  3. After successful login, deploy your DAGs by running the command `astro deploy`.
+  4. You will be prompted to choose your Astro Deployment. Select the appropriate one from the list.
+  5. Once selected, the deployment process will start. Wait for it to complete, and your DAGs will be deployed to Astronomer.
+
+  <img width="1290" alt="image" src="https://github.com/user-attachments/assets/aafcb7cf-f3a8-4d82-b083-ec033a32194e">
+
+  For more detailed instructions, refer to the [Astronomer documentation on deploying DAGs](https://www.astronomer.io/docs/astro/deploy-dags).
+</details>
+
 **5. Setup Streamlit (Deployment)**
 
 <details>
