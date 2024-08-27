@@ -142,12 +142,58 @@ cd data_analytics_dashboard_starter_kit
 
   Example of what you might include in your `.env` file:
   ```
-    NEON_DB_URL=your_neon_connection_string 
-    COIN_API_TOKEN=your_coin_api_token
+  NEON_DB_URL=your_neon_connection_string 
+  COIN_API_TOKEN=your_coin_api_token
   ```
+
 </details>
 
 **2. Setup CoingGecko API usage**
+
+<details>
+  <summary>Click here to see how to use CoinGecko API with a free demo account</summary>
+    
+  #### To use the CoinGecko API with a free demo account, follow these steps:
+    
+  - Create a Free Demo Account: Sign up for a free demo account on CoinGecko by following the instructions in the User Guide.
+  - Generate an API Key: After creating your account, generate an API key that you will use to make requests to the CoinGecko API. This API key is unique to your account and should be kept secure.
+  - Keep Your API Key Safe: Ensure that you do not push your API key to GitHub or share it publicly. This is your secret token, and exposing it could lead to unauthorized access to your account.
+
+  Here’s a code example demonstrating how to use the CoinGecko API to fetch OHLC data (OHLC data represents the Open, High, Low, and Close prices of an asset within a specific time period) for bitcoin for 30 days:
+
+  ```Python
+    import requests
+    import pandas as pd
+    import os
+    
+    def fetch_ohlc_data(coin_id, api_key, days=30, vs_currency='usd'):
+        base_url = f"https://api.coingecko.com/api/v3/coins/{coin_id}/ohlc"
+        headers = {
+            "x-cg-demo-api-key": api_key
+        }
+        params = {
+            "vs_currency": vs_currency,
+            "days": days
+        }
+        response = requests.get(base_url, headers=headers, params=params)
+        if response.status_code == 200:
+            data = response.json()
+            ohlc_df = pd.DataFrame(data, columns=['timestamp', 'open', 'high', 'low', 'close'])
+            ohlc_df['date'] = pd.to_datetime(ohlc_df['timestamp'], unit='ms')
+            return ohlc_df
+        else:
+            print(f"Failed to fetch data for {coin_id}: {response.status_code}")
+            return pd.DataFrame()
+    
+    coin_id = 'bitcoin'
+    api_key = os.getenv("COIN_TOKEN")  # Replace with your actual API key
+    ohlc_data = fetch_ohlc_data(coin_id, api_key)
+    
+    print(ohlc_data.head())
+  ```   
+
+    
+</details>
 
 **3. Setup Neon Database**
 
