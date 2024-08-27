@@ -48,10 +48,12 @@ The project is organized into several key directories and files to ensure consis
 
 - **`astronomer/`**: This folder is designated for the Airflow cloud solution, Astronomer. Within it:
     - **`dags/`**: Contains Airflow DAGs that orchestrate the ETL processes, pulling data from external APIs and loading it into the Neon database. This directory is also packaged into a Docker image, which includes a Dockerfile for containerization.
+    - **`requirements.txt`**: Specifies the dependencies for the Airflow dags image.
+    - A **Dockerfile** is used to package the Airflow dags for deployment.
 - **`frontend/`**: Includes Streamlit app files.
     - **`app.py`**: The main Streamlit app file that defines the dashboard functionality.
     - **`requirements.txt`**: Specifies the dependencies for the Streamlit app, ensuring all necessary packages are installed.
-    - A Dockerfile is used to package the Streamlit app for deployment.
+    - A **Dockerfile** is used to package the Streamlit app for deployment.
 - **`README.md`**: Provides an overview of the project, setup instructions, and other relevant documentation.
 
 Additionally, in the root directory:
