@@ -106,7 +106,12 @@ Additionally, in the root directory:
   
       - Build the Docker image for the `streamlit` app using its Dockerfile.
       - Start the containers and run the applications.
+   4. Open a web browser and go to `http://localhost:8501`. This will take you to the Streamlit application interface.
 
 </details>
 
+**2. Setup Neon Database**
 
+**3. Setup Astronomer Airflow**
+
+**4. Setup Streamlit (Deployment)**
