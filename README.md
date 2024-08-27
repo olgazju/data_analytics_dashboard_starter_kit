@@ -53,7 +53,7 @@ Additionally, in the root directory:
 <details>
   <summary>Click here to see Python environment setup</summary>
 
-  ### Install `pyenv` and `pyenv-virtualenv`
+  #### Install `pyenv` and `pyenv-virtualenv`
   
   Make sure you have Homebrew installed, then run the following commands to install `pyenv` and `pyenv-virtualenv`:
   
@@ -62,7 +62,7 @@ Additionally, in the root directory:
   brew install pyenv-virtualenv
   ```
   
-  ### Install Python
+  #### Install Python
   
   Use `pyenv` to install the desired version of Python. In this project, we are using Python 3.12.0:
   
@@ -70,7 +70,7 @@ Additionally, in the root directory:
   pyenv install 3.12.0
   ```
   
-  ### Create a Virtual Environment
+  #### Create a Virtual Environment
   
   Create a virtual environment named `da_kit` using `pyenv-virtualenv`:
   
@@ -78,7 +78,7 @@ Additionally, in the root directory:
   pyenv virtualenv 3.12.0 da_kit
   ```
   
-  ### Connect the Virtual Environment to the Project Directory
+  #### Connect the Virtual Environment to the Project Directory
   
   Navigate to your project directory and set the local Python version to the virtual environment you just created:
   
@@ -91,11 +91,12 @@ Additionally, in the root directory:
 <details>
   <summary>Click here to see Docker setup</summary>
 
+
   This project utilizes Docker Compose to run Streamlit frontend. Follow these instructions to build and start the application using Docker Compose.
   
   Ensure Docker and Docker Compose are installed on your machine. You can download and install [Docker](https://www.docker.com/products/docker-desktop/) from Docker's official website.
   
-  - ### Steps to Run the Application
+  - #### Steps to Run the Application
 
   1. **Navigate to the Project Directory**:
   Open a terminal and navigate to the root directory of the project where the `docker-compose.yml` file is located.
