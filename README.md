@@ -154,6 +154,8 @@ cd data_analytics_dashboard_starter_kit
 <details>
   <summary>Click here to see Neon setup</summary>
 
+#### Neon Setup:
+
 - Create an Account: Visit the [Neon website](https://neon.tech/docs/get-started-with-neon/signing-up) and follow the instructions to create a new account. The free tier allows you to have one project with 0.5 GiB storage.
 - Project Dashboard: Once your account is created, you will be able to access the Neon project dashboard. This dashboard allows you to manage your database projects. Below is a screenshot of what the project dashboard looks like.
 
