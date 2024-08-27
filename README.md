@@ -262,7 +262,7 @@ This connection link will be used in different parts of this kit to connect your
 
   Create a frontend/.streamlit/secrets.toml file to store sensitive information, such as your connection details to Neon. This file helps keep your secrets secure when deploying your Streamlit app. For more details on how to manage secrets in Streamlit, refer to the official documentation [here](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management).
     
-<details>    
+</details>  
 
 <details>
   <summary>Click here to see Streamlit Deployment</summary>
@@ -271,6 +271,6 @@ This connection link will be used in different parts of this kit to connect your
 
     https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started
     
-<details>  
+</details>
 
 
