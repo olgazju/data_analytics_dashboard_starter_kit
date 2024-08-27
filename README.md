@@ -48,10 +48,12 @@ The project is organized into several key directories and files to ensure consis
 
 - **`astronomer/`**: This folder is designated for the Airflow cloud solution, Astronomer. Within it:
     - **`dags/`**: Contains Airflow DAGs that orchestrate the ETL processes, pulling data from external APIs and loading it into the Neon database. This directory is also packaged into a Docker image, which includes a Dockerfile for containerization.
+    - **`requirements.txt`**: Specifies the dependencies for the Airflow dags image.
+    - A **Dockerfile** is used to package the Airflow dags for deployment.
 - **`frontend/`**: Includes Streamlit app files.
     - **`app.py`**: The main Streamlit app file that defines the dashboard functionality.
     - **`requirements.txt`**: Specifies the dependencies for the Streamlit app, ensuring all necessary packages are installed.
-    - A Dockerfile is used to package the Streamlit app for deployment.
+    - A **Dockerfile** is used to package the Streamlit app for deployment.
 - **`README.md`**: Provides an overview of the project, setup instructions, and other relevant documentation.
 
 Additionally, in the root directory:
@@ -262,7 +264,7 @@ This connection link will be used in different parts of this kit to connect your
 
   Create a frontend/.streamlit/secrets.toml file to store sensitive information, such as your connection details to Neon. This file helps keep your secrets secure when deploying your Streamlit app. For more details on how to manage secrets in Streamlit, refer to the official documentation [here](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management).
     
-<details>    
+</details>  
 
 <details>
   <summary>Click here to see Streamlit Deployment</summary>
@@ -271,6 +273,6 @@ This connection link will be used in different parts of this kit to connect your
 
     https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started
     
-<details>  
+</details>
 
 
