@@ -228,13 +228,44 @@ This connection link will be used in different parts of this kit to connect your
 
 **4. Setup Astronomer Airflow**
 
-deployment
-connection in deployment
-secret in deployment
+<details>
+  <summary>Click here to see Astronomer setup</summary>
+
+#### Astronomer Setup:
+
+1. Create an Account: Follow [this link](https://www.astronomer.io/docs/astro/first-dag-onboarding) to create an account in Astro.
+2. Set Up Organization and Workspace: After signing up, create your Organization and Workspace within Astro.
+3. Set Up Astro Deployment: Once your workspace is ready, set up your Astro Deployment. This will allow you to run your Airflow DAGs.
+
+   <img width="1248" alt="image" src="https://github.com/user-attachments/assets/f99514c3-6536-4304-89e1-0c30036eef27">
+   
+5. Access Environment Tab: Click on your deployment to access the **Environment** tab.
+6. Create Secrets: In the **Environment** tab, create a secret for the CoinGecko API token and a connection to your Neon database. These secrets will be used in the Airflow DAG to authenticate and connect to the necessary services (An Airflow DAG (Directed Acyclic Graph) is a collection of tasks organized to run in a specific order, used to automate data workflows.)
+    - **CoinGecko API Token**: This token is needed to authenticate API requests to CoinGecko. Don't forget to click on Secret checkbox.
+
+      <img width="1285" alt="image" src="https://github.com/user-attachments/assets/38e0c2e0-88a1-42ad-95e1-7ad9b95d2817">
+
+    - **Neon Database Connection**: This connection string will allow Airflow to interact with your Neon database.
+
+      <img width="674" alt="image" src="https://github.com/user-attachments/assets/f880e6e6-c2b0-467b-91c1-974d8867644f">
+
+    From the deployment page, you can also click on the "Open Airflow" button to access the real Airflow UI.
+
+</details>
 
 **5. Setup Streamlit (Deployment)**
 
-conneciton to NEON
-secrets
+<details>
+  <summary>Click here to see Streamlit setup</summary>
+
+  #### Streamlit Setup:
+
+  Create a frontend/.streamlit/secrets.toml file to store sensitive information, such as your connection details to Neon. This file helps keep your secrets secure when deploying your Streamlit app. For more details on how to manage secrets in Streamlit, refer to the official documentation [here](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management).
+    
+<details>    
+
+<details>
+  <summary>Click here to see Streamlit Deployment</summary>
+<details>  
 
 
