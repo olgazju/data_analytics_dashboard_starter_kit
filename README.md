@@ -262,7 +262,19 @@ This connection link will be used in different parts of this kit to connect your
 
   #### Streamlit Setup:
 
-  Create a frontend/.streamlit/secrets.toml file to store sensitive information, such as your connection details to Neon. This file helps keep your secrets secure when deploying your Streamlit app. For more details on how to manage secrets in Streamlit, refer to the official documentation [here](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management).
+  Create a `frontend/.streamlit/secrets.toml` file to store sensitive information, such as your connection details to Neon. This file helps keep your secrets secure when deploying your Streamlit app. For more details on how to manage secrets in Streamlit, refer to the official documentation [here](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management).
+
+Streamlit utilizes the `secrets.toml` file to configure connections to databases like PostgreSQL, as demonstrated in the Streamlit [tutorial](https://docs.streamlit.io/develop/tutorials/databases/postgresql). To set up the connection, create a `secrets.toml` file with the following structure:
+
+  ```toml
+  [connections.postgresql]
+  dialect = "postgresql"
+  host = "ep-holy-band-a5en4z0k.us-east-2.aws.neon.tech"
+  port = "5432"
+  database = "da_db"
+  username = "da_db_owner"
+  password = "****"
+  ```
     
 </details>  
 
