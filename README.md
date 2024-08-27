@@ -24,6 +24,18 @@ Airflow handles the automation of data workflows, ensuring data is efficiently f
 #### CoinGecko API:
 The CoinGecko API provides real-time and historical cryptocurrency market data, including OHLC, market cap, volume, and more.
 
+## Pricing Tiers for Technologies
+
+Here's a breakdown of the pricing models for each technology used in the Data Analytics Dashboard Starter Kit:
+
+| Technology          | Pricing Tier                | Description                                                                                                             |
+|---------------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Neon**            | Free                        | $0/month. Includes 0.5 GiB storage, 24/7 database at 0.25 CU, Autoscaling up to 2 CU, 1 project, 10 branches. [More info](https://console.neon.tech/app/billing#plans). |
+| **Astronomer (Airflow)** | Free Trial                | 14-day trial with $300 in credits. Includes 1 Workspace, 1 Deployment, up to 5 workers per worker queue, A5, A10, or A20 workers. [More info](https://www.astronomer.io/docs/astro/trial). |
+| **CoinGecko API**   | Free Demo (Beta)            | Free tier with 10K API calls per month and some limitations. [More info](https://www.coingecko.com/en/api/pricing).    |
+| **Streamlit Cloud** | Free                        | Free to deploy, manage, and share your apps with the world, directly from Streamlit.                                    |
+
+
 ## Key Features Demonstrated in This Project
 
 - **Smooth Integration:** Understand how to connect Neon, Streamlit, and Airflow using Python to build a unified data analytics platform.
