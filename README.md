@@ -159,13 +159,13 @@ cd data_analytics_dashboard_starter_kit
 - Create an Account: Visit the [Neon website](https://neon.tech/docs/get-started-with-neon/signing-up) and follow the instructions to create a new account. The free tier allows you to have one project with 0.5 GiB storage.
 - Project Dashboard: Once your account is created, you will be able to access the Neon project dashboard. This dashboard allows you to manage your database projects. Below is a screenshot of what the project dashboard looks like.
 
-<img width="1280" alt="image" src="https://github.com/user-attachments/assets/c6e5851b-6c06-43b2-add3-20aaaa2dde0b">
+    <img width="1280" alt="image" src="https://github.com/user-attachments/assets/c6e5851b-6c06-43b2-add3-20aaaa2dde0b">
 
 - Connection Link and Database Management: By clicking on your project, you can view the project dashboard. From here, you can obtain the connection link to your database and create new databases if needed. This connection link will be used later to connect your Streamlit app and Airflow instance to the Neon database.
 
-<img width="1279" alt="image" src="https://github.com/user-attachments/assets/14106837-d97b-4fa2-834c-ad4e6dff7c50">
+    <img width="1279" alt="image" src="https://github.com/user-attachments/assets/14106837-d97b-4fa2-834c-ad4e6dff7c50">
 
-As shown in the screenshot, your actual connection link is:
+As shown in the screenshot, the actual connection link is:
 
 ```
 postgresql://da_db_owner:*******@ep-holy-band-a5en4z0k.us-east-2.aws.neon.tech/da_db?sslmode=require
