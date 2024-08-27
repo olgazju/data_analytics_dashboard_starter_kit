@@ -266,6 +266,11 @@ This connection link will be used in different parts of this kit to connect your
 
 <details>
   <summary>Click here to see Streamlit Deployment</summary>
+
+  #### Streamlit Deployment:
+
+    https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started
+    
 <details>  
 
 
