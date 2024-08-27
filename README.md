@@ -91,27 +91,20 @@ Additionally, in the root directory:
 <details>
   <summary>Click here to see Docker setup</summary>
 
+  #### Steps to Run the Application
 
-  This project utilizes Docker Compose to run Streamlit frontend. Follow these instructions to build and start the application using Docker Compose.
-  
-  Ensure Docker and Docker Compose are installed on your machine. You can download and install [Docker](https://www.docker.com/products/docker-desktop/) from Docker's official website.
-  
-  - #### Steps to Run the Application
-
-  1. **Navigate to the Project Directory**:
-  Open a terminal and navigate to the root directory of the project where the `docker-compose.yml` file is located.
-  2. **Build and Start the Containers**:
-  Run the following command to build the Docker images for both the frontend and backend services and start the containers:
+  1. Ensure Docker and Docker Compose are installed on your machine. You can download and install [Docker](https://www.docker.com/products/docker-desktop/) from Docker's official website.
+  2. Navigate to the Project Directory: Open a terminal and navigate to the root directory of the project where the `compose.yaml` file is located.
+  3. Run the following command to build the Docker image for the frontend app and start the containers:
   
       ```bash
-      bashCopy code
       docker-compose up --build
   
       ```
   
       This command will:
   
-      - Build the Docker images for the `streamlit` app using its Dockerfile.
+      - Build the Docker image for the `streamlit` app using its Dockerfile.
       - Start the containers and run the applications.
 
 </details>
