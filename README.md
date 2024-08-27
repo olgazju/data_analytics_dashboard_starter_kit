@@ -4,8 +4,9 @@
 
 The Data Analytics Dashboard Starter Kit is an open-source project designed to provide a robust foundation for building data analytics dashboards. This project leverages [Neon](https://neon.tech/docs/introduction), a serverless Postgres solution, to store and manage data, while [Streamlit](https://docs.streamlit.io/) is used to create an interactive web-based dashboard. [Airflow (via Astronomer)](https://airflow.apache.org/docs/apache-airflow/stable/index.html) orchestrates the data ingestion and processing, automating the workflow of fetching, transforming, and loading data from external APIs into Neon.
 
-For demonstration purposes, this kit uses cryptocurrency data fetched from the [CoinGecko API](https://docs.coingecko.com/v3.0.1/reference/introduction). However, the framework is highly adaptable and can be utilized with any type of data, making it a versatile starting point for developers.
+This setup is ideal for individuals who may not have extensive experience with backend or frontend development but wish to quickly build a proof of concept (POC) or a functional data dashboard. All that's needed is a basic understanding of Python.
 
+For demonstration purposes, this kit uses cryptocurrency data fetched from the [CoinGecko API](https://docs.coingecko.com/v3.0.1/reference/introduction). However, the framework is highly adaptable and can be utilized with any type of data, making it a versatile starting point for developers.
 
 ## Project Components
 
@@ -48,6 +49,18 @@ Additionally, in the root directory:
 
 ## Environment Setup
 
+To get started with the Data Analytics Dashboard Starter Kit, you can either clone or fork the repository from GitHub. Use the following command to clone the repository:
+
+```bash
+git clone https://github.com/olgazju/data_analytics_dashboard_starter_kit.git
+```
+
+After cloning, navigate to the root folder of the project:
+
+```bash
+cd data_analytics_dashboard_starter_kit
+```
+
 **1. Local Environment Setup (macOS)**
 
 <details>
@@ -80,7 +93,7 @@ Additionally, in the root directory:
   
   #### Connect the Virtual Environment to the Project Directory
   
-  Navigate to your project directory and set the local Python version to the virtual environment you just created:
+  Set the local Python version to the virtual environment you just created:
   
   ```bash
   pyenv local da_kit
@@ -122,7 +135,7 @@ Additionally, in the root directory:
   ```
 </details>
 
-**2. Setup coingecko API usage**
+**2. Setup CoingGecko API usage**
 
 **3. Setup Neon Database**
 
