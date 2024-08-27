@@ -110,8 +110,31 @@ Additionally, in the root directory:
 
 </details>
 
-**2. Setup Neon Database**
+<details>
+  <summary>Click here to see more about the .env local file</summary>
 
-**3. Setup Astronomer Airflow**
+  Remember to create a `.env` file in the root folder using `touch .env`. This file is excluded from GitHub, so it's safe to store your sensitive information here. If you want to test access to Neon or other services locally, you can keep secrets such as the Neon connection string or the CoinGecko API token in this file.
 
-**4. Setup Streamlit (Deployment)**
+  Example of what you might include in your `.env` file:
+  ```
+    NEON_DB_URL=your_neon_connection_string 
+    COIN_API_TOKEN=your_coin_api_token
+  ```
+</details>
+
+**2. Setup coingecko API usage**
+
+**3. Setup Neon Database**
+
+**4. Setup Astronomer Airflow**
+
+deployment
+connection in deployment
+secret in deployment
+
+**5. Setup Streamlit (Deployment)**
+
+conneciton to NEON
+secrets
+
+
