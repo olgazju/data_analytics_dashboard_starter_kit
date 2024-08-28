@@ -270,7 +270,7 @@ This connection link will be used in different parts of this kit to connect your
 
    Wait for it to complete, and your DAGs will be deployed to Astronomer.
 
-  <img width="1290" alt="image" src="https://github.com/user-attachments/assets/aafcb7cf-f3a8-4d82-b083-ec033a32194e">
+  <img width="1287" alt="image" src="https://github.com/user-attachments/assets/c9c8fa5d-ae8b-4aef-b8be-b53de6d4ff71">
 
   For more detailed instructions, refer to the [Astronomer documentation on deploying DAGs](https://www.astronomer.io/docs/astro/deploy-dags).
 </details>
