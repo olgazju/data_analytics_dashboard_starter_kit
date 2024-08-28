@@ -12,7 +12,8 @@ import os
     tags=["crypto", "coingecko"],
 )
 def ohlc_daily_load() -> None:
-    coins = ['bitcoin']
+    coins = ['bitcoin', 'ethereum', 'binancecoin', 'cardano', 'litecoin', 'tether' 'solana', 'ripple', 'polkadot', 'dogecoin', 'usd-coin',
+             'beam']
     days = 1
     api_key = os.getenv("COIN_TOKEN")
 
