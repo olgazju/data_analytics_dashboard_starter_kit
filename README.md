@@ -28,6 +28,8 @@ Airflow handles the automation of data workflows, ensuring data is efficiently f
 #### CoinGecko API:
 The CoinGecko API provides real-time and historical cryptocurrency market data, including OHLC, market cap, volume, and more.
 
+![image](https://github.com/user-attachments/assets/606c2737-dcc7-4fa2-b37a-d5a519d86d80)
+
 ## Pricing Tiers for Technologies
 
 Here's a breakdown of the pricing models for each technology used in the Data Analytics Dashboard Starter Kit:
