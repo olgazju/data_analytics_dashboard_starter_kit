@@ -8,6 +8,10 @@ This setup is ideal for individuals who may not have extensive experience with b
 
 For demonstration purposes, this kit uses cryptocurrency data fetched from the [CoinGecko API](https://docs.coingecko.com/v3.0.1/reference/introduction). However, the framework is highly adaptable and can be utilized with any type of data, making it a versatile starting point for developers.
 
+Explore the live demo of the dashboard: [Data Analytics Dashboard Starter Kit](https://dataanalyticsdashboardstarterkitgit-mmfhdqwnfs7j53dgvjfepn.streamlit.app/).
+
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/3115250e-54fd-4e01-8455-0dcf82aadf43">
+
 ## Project Components
 
 ### Neon PostgreSQL Database:
@@ -23,6 +27,8 @@ Airflow handles the automation of data workflows, ensuring data is efficiently f
 
 #### CoinGecko API:
 The CoinGecko API provides real-time and historical cryptocurrency market data, including OHLC, market cap, volume, and more.
+
+![image](https://github.com/user-attachments/assets/606c2737-dcc7-4fa2-b37a-d5a519d86d80)
 
 ## Pricing Tiers for Technologies
 
@@ -294,8 +300,12 @@ Streamlit utilizes the `secrets.toml` file to configure connections to databases
   database = "da_db"
   username = "da_db_owner"
   password = "****"
+  [token]
+  coin_token = "****"
   ```
-    
+
+Also CoingGecko API token was added as a secret.
+
 </details>  
 
 <details>
@@ -303,8 +313,28 @@ Streamlit utilizes the `secrets.toml` file to configure connections to databases
 
   #### Streamlit Deployment:
 
-    https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started
-    
+  Follow this link to create an account on the Streamlit public cloud: [Streamlit Account Creation](https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/create-your-account#step-1-primary-identity). Once your account is set up, click on "Create a new app," and you will be prompted to connect to your GitHub account. Connect your GitHub account and select the public repository containing your Streamlit app. After you have linked the repository, Streamlit will automatically start the deployment process. Wait for the deployment to complete, and your Data Analytics Dashboard will be live and accessible through a provided URL.
+  
+  To securely manage your app's secrets, such as API keys or database connection strings, follow the instructions here: [Streamlit Secrets Management](https://chatgpt.com/c/8a4b0249-d6dc-45b3-bf95-c8bb7acfc079#:~:text=Streamlit%20Secrets%20Management). If you have frontend/.streamlit/secrets.toml in your project you can just copy its content.
+
+  Following the link https://share.streamlit.io/, you can see a list of all your deployed Streamlit apps. This interface allows you to manage your apps, view their status, and update them as needed. It provides a centralized place to track and interact with your deployed projects.
+
+  <img width="1495" alt="image" src="https://github.com/user-attachments/assets/eea9f064-0046-44c0-9e2e-e9dba2f9a642">
+
 </details>
 
+## How to Use the Data Analytics Dashboard Starter Kit
 
+1. **Run the Historical DAG**: Start by running the historical data load DAG in Airflow (Astronomer). This will fetch OHLC (Open, High, Low, Close) data for the selected cryptocurrencies and load it into the Neon database. You can use the existing data and functions, or you can replace the `ohlc_daily_load` function with any API or dataset of your choice. If you decide to use a different dataset, make sure to modify the SQL table creation query found in `astronomer/dags/schemas/create_ohlc_table.sql` accordingly. Then, run the DAG to load your data.
+
+<img width="1510" alt="image" src="https://github.com/user-attachments/assets/5621eeb1-7dc1-4b72-8a37-f68aa5be5f5c">
+
+
+2. **Verify Data in Neon**: Once the DAG has completed, you can verify that the data has been successfully ingested by running a simple SQL query in Neon. 
+
+<img width="1033" alt="image" src="https://github.com/user-attachments/assets/e93b870f-3ada-426f-959a-cccf9447c5be">
+
+
+3. **View the Dashboard**: With the data loaded into Neon, navigate to your deployed Streamlit app. Use the dashboard to visualize the cryptocurrency data, apply date filters, and observe the various metrics displayed. If you're using a different dataset, remember to adjust both the data loading logic and UI elements in the Streamlit app to match your data structure. Pay attention to the `@st.cache_data` decorator, which is used to cache data and improve performance.
+
+Note: For simplicity, this starter kit currently includes only 12 cryptocurrencies and a few select metrics to demonstrate functionality. However, it can be easily extended to support more coins and additional metrics as needed.
