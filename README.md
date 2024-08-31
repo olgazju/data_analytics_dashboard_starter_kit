@@ -294,8 +294,12 @@ Streamlit utilizes the `secrets.toml` file to configure connections to databases
   database = "da_db"
   username = "da_db_owner"
   password = "****"
+  [token]
+  coin_token = "****"
   ```
-    
+
+Also CoingGecko API token was added as a secret.
+
 </details>  
 
 <details>
