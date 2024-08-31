@@ -8,6 +8,8 @@ This setup is ideal for individuals who may not have extensive experience with b
 
 For demonstration purposes, this kit uses cryptocurrency data fetched from the [CoinGecko API](https://docs.coingecko.com/v3.0.1/reference/introduction). However, the framework is highly adaptable and can be utilized with any type of data, making it a versatile starting point for developers.
 
+Explore the live demo of the dashboard: [Data Analytics Dashboard Starter Kit](https://dataanalyticsdashboardstarterkitgit-mmfhdqwnfs7j53dgvjfepn.streamlit.app/).
+
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/3115250e-54fd-4e01-8455-0dcf82aadf43">
 
 ## Project Components
@@ -319,19 +321,18 @@ Also CoingGecko API token was added as a secret.
 
 </details>
 
-## How to Use the Data Analytics Dashboard Starter Kit*
+## How to Use the Data Analytics Dashboard Starter Kit
 
-1. **Run the Historical DAG**: Start by running the historical data load DAG in Airflow (Astronomer). This will fetch OHLC (Open, High, Low, Close) data for the selected cryptocurrencies and load it into the Neon database.
+1. **Run the Historical DAG**: Start by running the historical data load DAG in Airflow (Astronomer). This will fetch OHLC (Open, High, Low, Close) data for the selected cryptocurrencies and load it into the Neon database. You can use the existing data and functions, or you can replace the `ohlc_daily_load` function with any API or dataset of your choice. If you decide to use a different dataset, make sure to modify the SQL table creation query found in `astronomer/dags/schemas/create_ohlc_table.sql` accordingly. Then, run the DAG to load your data.
 
 <img width="1510" alt="image" src="https://github.com/user-attachments/assets/5621eeb1-7dc1-4b72-8a37-f68aa5be5f5c">
 
 
-   
-2. **Verify Data in Neon**: Once the DAG has completed, you can verify that the data has been successfully ingested by running a simple SQL query in Neon. Check the data to ensure it includes the OHLC values for the coins you are tracking.
+2. **Verify Data in Neon**: Once the DAG has completed, you can verify that the data has been successfully ingested by running a simple SQL query in Neon. 
 
 <img width="1033" alt="image" src="https://github.com/user-attachments/assets/e93b870f-3ada-426f-959a-cccf9447c5be">
 
 
-3. **View the Dashboard**: With the data loaded into Neon, navigate to your deployed Streamlit app using the provided link. Use the dashboard to visualize the cryptocurrency data, apply date filters, and observe the various metrics displayed. The dashboard shows metrics like market cap, current price, and 24-hour price change with visual indicators (arrows) for changes.
+3. **View the Dashboard**: With the data loaded into Neon, navigate to your deployed Streamlit app. Use the dashboard to visualize the cryptocurrency data, apply date filters, and observe the various metrics displayed. If you're using a different dataset, remember to adjust both the data loading logic and UI elements in the Streamlit app to match your data structure. Pay attention to the `@st.cache_data` decorator, which is used to cache data and improve performance.
 
 Note: For simplicity, this starter kit currently includes only 12 cryptocurrencies and a few select metrics to demonstrate functionality. However, it can be easily extended to support more coins and additional metrics as needed.
