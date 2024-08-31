@@ -8,6 +8,8 @@ This setup is ideal for individuals who may not have extensive experience with b
 
 For demonstration purposes, this kit uses cryptocurrency data fetched from the [CoinGecko API](https://docs.coingecko.com/v3.0.1/reference/introduction). However, the framework is highly adaptable and can be utilized with any type of data, making it a versatile starting point for developers.
 
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/3115250e-54fd-4e01-8455-0dcf82aadf43">
+
 ## Project Components
 
 ### Neon PostgreSQL Database:
