@@ -309,8 +309,14 @@ Also CoingGecko API token was added as a secret.
 
   #### Streamlit Deployment:
 
-    https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started
-    
+  Follow this link to create an account on the Streamlit public cloud: [Streamlit Account Creation](https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started/create-your-account#step-1-primary-identity). Once your account is set up, click on "Create a new app," and you will be prompted to connect to your GitHub account. Connect your GitHub account and select the public repository containing your Streamlit app. After you have linked the repository, Streamlit will automatically start the deployment process. Wait for the deployment to complete, and your Data Analytics Dashboard will be live and accessible through a provided URL.
+  
+  To securely manage your app's secrets, such as API keys or database connection strings, follow the instructions here: [Streamlit Secrets Management](https://chatgpt.com/c/8a4b0249-d6dc-45b3-bf95-c8bb7acfc079#:~:text=Streamlit%20Secrets%20Management). If you have frontend/.streamlit/secrets.toml in your project you can just copy its content.
+
+  Following the link https://share.streamlit.io/, you can see a list of all your deployed Streamlit apps. This interface allows you to manage your apps, view their status, and update them as needed. It provides a centralized place to track and interact with your deployed projects.
+
+  <img width="1495" alt="image" src="https://github.com/user-attachments/assets/eea9f064-0046-44c0-9e2e-e9dba2f9a642">
+
 </details>
 
 
