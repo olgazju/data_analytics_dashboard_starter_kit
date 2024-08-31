@@ -19,7 +19,7 @@ def ohlc_historical_load() -> None:
         sql='schemas/create_ohlc_table.sql',
     )
 
-    coins = ['bitcoin', 'ethereum', 'binancecoin', 'cardano', 'litecoin', 'tether' 'solana', 'ripple', 'polkadot', 'dogecoin', 'usd-coin',
+    coins = ['bitcoin', 'ethereum', 'binancecoin', 'cardano', 'litecoin', 'tether', 'solana', 'ripple', 'polkadot', 'dogecoin', 'usd-coin',
              'beam']
 
     days = 30
