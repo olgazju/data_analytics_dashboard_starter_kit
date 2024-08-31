@@ -89,6 +89,7 @@ def get_coins():
     return result['coin_id'].tolist()
 
 
+st.title("Data Analytics Dashboard")
 # Load available coins and allow the user to select one
 coins = get_coins()
 coin = st.sidebar.selectbox("Select Cryptocurrency", coins)
