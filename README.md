@@ -319,4 +319,19 @@ Also CoingGecko API token was added as a secret.
 
 </details>
 
+## How to Use the Data Analytics Dashboard Starter Kit*
 
+1. **Run the Historical DAG**: Start by running the historical data load DAG in Airflow (Astronomer). This will fetch OHLC (Open, High, Low, Close) data for the selected cryptocurrencies and load it into the Neon database.
+
+<img width="1510" alt="image" src="https://github.com/user-attachments/assets/5621eeb1-7dc1-4b72-8a37-f68aa5be5f5c">
+
+
+   
+2. **Verify Data in Neon**: Once the DAG has completed, you can verify that the data has been successfully ingested by running a simple SQL query in Neon. Check the data to ensure it includes the OHLC values for the coins you are tracking.
+
+<img width="1033" alt="image" src="https://github.com/user-attachments/assets/e93b870f-3ada-426f-959a-cccf9447c5be">
+
+
+3. **View the Dashboard**: With the data loaded into Neon, navigate to your deployed Streamlit app using the provided link. Use the dashboard to visualize the cryptocurrency data, apply date filters, and observe the various metrics displayed. The dashboard shows metrics like market cap, current price, and 24-hour price change with visual indicators (arrows) for changes.
+
+Note: For simplicity, this starter kit currently includes only 12 cryptocurrencies and a few select metrics to demonstrate functionality. However, it can be easily extended to support more coins and additional metrics as needed.
